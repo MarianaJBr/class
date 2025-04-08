@@ -8471,7 +8471,7 @@ int perturbations_print_variables(double tau,
           delta_ncdm[n_ncdm] = y[idx];
           theta_ncdm[n_ncdm] = y[idx+1];
           shear_ncdm[n_ncdm] = y[idx+2];
-          //This is the adiabatic sound speed:
+          //This is the adiabatic sound speed: //MJB: to be extended for LeDM
           delta_p_over_delta_rho_ncdm[n_ncdm] = w_ncdm*(1.0-1.0/(3.0+3.0*w_ncdm)*(3.0*w_ncdm-2.0+pseudo_p_ncdm/p_ncdm_bg));
           idx += ppw->pv->l_max_ncdm[n_ncdm]+1;
         }
@@ -9493,6 +9493,8 @@ int perturbations_derivs(double tau,
     }
 
     /** - ---> fluid (fld) */
+    // MJB:2025.04.08 This is the structure we need to adapt for LeDM
+    // TODO: copy this structure for the DM section?
 
     if (pba->has_fld == _TRUE_) {
 
